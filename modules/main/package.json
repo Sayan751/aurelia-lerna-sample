@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "prebuild": "gulp build",
-    "build": "cross-env NODE_ENV=production NODE_PRESERVE_SYMLINKS=1 node ../../node_modules/webpack/bin/webpack",
-    "modules": "cross-env NODE_ENV=production NODE_PRESERVE_SYMLINKS=1 node ../../node_modules/webpack/bin/webpack --display-modules",
+    "build": "cross-env NODE_ENV=production node ../../node_modules/webpack/bin/webpack",
+    "modules": "cross-env NODE_ENV=production node ../../node_modules/webpack/bin/webpack --display-modules",
     "prestart": "gulp build",
-    "start": "cross-env NODE_ENV=development NODE_PRESERVE_SYMLINKS=1 node ../../node_modules/webpack-dev-server/bin/webpack-dev-server",
+    "start": "cross-env NODE_ENV=development node ../../node_modules/webpack-dev-server/bin/webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
