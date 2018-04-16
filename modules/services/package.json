@@ -1,0 +1,21 @@
+{
+  "name": "services",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/services.js",
+  "typings": "dist/services",
+  "scripts": {
+    "build": "gulp build",
+    "test:dev": "node ../../node_modules/karma/bin/karma start ../../karma.conf.js --basePath=modules/services",
+    "test": "npm run test:dev -- --autoWatch=false --singleRun=true --browsers=PhantomJS --reporters=mocha,karma-typescript,tfs"
+  },
+  "author": "",
+  "license": "ISC",
+  "aurelia": {
+    "build": {
+      "resources": [
+        "data.json"
+      ]
+    }
+  }
+}

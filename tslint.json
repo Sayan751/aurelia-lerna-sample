@@ -1,0 +1,25 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+        "eofline": false,
+        "max-line-length": [true, 200],
+        "max-classes-per-file": [false],
+        "trailing-comma": [false],
+        "indent": [true],
+        "interface-name": ["never-prefix"],
+        "one-variable-per-declaration": [false],
+        "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case"],
+        "no-this-assignment": true,
+        "no-console": false
+    },
+    "linterOptions": {
+        "exclude": [
+            "bin",
+            "**/tests/**/*.ts"
+        ]
+    }
+}

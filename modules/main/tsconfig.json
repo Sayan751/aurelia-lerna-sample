@@ -1,0 +1,24 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "declaration": false
+    },
+	"awesomeTypescriptLoaderOptions": {
+		"doTypeCheck": true,
+		"forkChecker": true,
+		"useBabel": false,
+		"useCache": true,
+		"silent": true,
+		"babelOptions": {
+			"presets": [
+				"es2015-loose-native-modules"
+			]
+		}
+	},
+    "exclude": [
+        "node_modules",
+		"dist",
+		"tests",
+		"webpack.config.js"
+    ]
+}

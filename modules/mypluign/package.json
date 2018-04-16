@@ -1,0 +1,18 @@
+{
+  "name": "myplugin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/myplugin.js",
+  "typings": "dist/myplugin",
+  "scripts": {
+    "build": "gulp build",
+    "test:dev": "node ../../node_modules/karma/bin/karma start ../../karma.conf.js --basePath=modules/services",
+    "test": "npm run test:dev -- --autoWatch=false --singleRun=true --browsers=PhantomJS --reporters=mocha,karma-typescript,tfs"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aurelia-framework": "^1.2.0",
+    "services": "^1.0.0"
+  }
+}

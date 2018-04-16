@@ -1,0 +1,20 @@
+{
+    "Navbar": [{
+            "Title": "Home",
+            "Path": "home"
+        },
+        {
+            "Title": "MyPlugin",
+            "Path": "myplugin",
+            "SubMenu": [{
+                    "Title": "Section1",
+                    "Path": "sectionone"
+                },
+                {
+                    "Title": "Section2",
+                    "Path": "sectiontwo"
+                }
+            ]
+        }
+    ]
+}
