@@ -1,12 +1,12 @@
 import { autoinject } from "aurelia-framework";
 import { PLATFORM } from "aurelia-pal";
 import { Router, RouterConfiguration } from "aurelia-router";
-import { MyService } from "services";
+import { MyService, RouteGenerator } from "services";
 
 @autoinject
 export class App {
 
-    constructor(private myService: MyService) {
+    constructor(private myService: MyService, private routeGenerator: RouteGenerator) {
         console.log("In App ctor, myService Id: " + myService.id);
         console.table(myService.getAllItems());
     }
@@ -15,14 +15,9 @@ export class App {
         config.title = "Website";
         config.options.pushState = true;
         config.options.root = "/";
-
-        config.map(
-            [
-                { moduleId: "views/home/home", name: "home", route: ["", "home"], },
-                { moduleId: "views/error/error", name: "error", route: "error/:id" }
-            ]
-        );
+        config.map(this.routeGenerator.getRoutes());
 
         config.mapUnknownRoutes(() => ({ moduleId: "views/error/error", route: "error" }));
+        this.routeGenerator.setRouter(router);
     }
 }

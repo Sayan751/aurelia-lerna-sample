@@ -39,7 +39,7 @@ module.exports = ({ production, server } = {}) => ({
   resolve: {
     extensions: [".ts", ".js"],
     modules: [srcDir, "node_modules"],
-    symlinks: true,
+    symlinks: false,
     
     // Following aliases are needed for FA5 tree shaking
     alias: {

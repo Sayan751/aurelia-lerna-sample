@@ -7,18 +7,18 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>    
+    </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item ${(nav.SubMenu && nav.SubMenu.length>0)?'dropdown':''}" repeat.for="nav of navs">
-          <a if.bind="nav.SubMenu && nav.SubMenu.length>0" class="nav-link dropdown-toggle" href.bind="nav.Path" id="navbarDropdown" role="button"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a if.bind="nav.SubMenu && nav.SubMenu.length>0" class="nav-link dropdown-toggle" href.bind="routeGenerator.getUrl(nav.Name)" id="navbarDropdown"
+            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             ${nav.Title}
           </a>
           <div if.bind="nav.SubMenu && nav.SubMenu.length>0" class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" repeat.for="subNav of nav.SubMenu" href="${nav.Path}/${subNav.Path}">${subNav.Title}</a>
+            <a class="dropdown-item" repeat.for="subNav of nav.SubMenu" href.bind="routeGenerator.getUrl(subNav.Name)">${subNav.Title}</a>
           </div>
-          <a else class="nav-link" href.bind='nav.Path'>${nav.Title}</a>
+          <a else class="nav-link" href.bind="routeGenerator.getUrl(nav.Name)">${nav.Title}</a>
         </li>
       </ul>
 

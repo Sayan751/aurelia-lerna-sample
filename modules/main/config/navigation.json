@@ -1,20 +1,15 @@
 {
     "Navbar": [{
             "Title": "Home",
-            "Path": "home"
+            "Name": "home"
         },
         {
             "Title": "MyPlugin",
-            "Path": "myplugin",
+            "Name": "myPluginHome",
             "SubMenu": [{
-                    "Title": "Section1",
-                    "Path": "sectionone"
-                },
-                {
-                    "Title": "Section2",
-                    "Path": "sectiontwo"
-                }
-            ]
+                "Title": "Section1",
+                "Name": "myPluginSectionOne"
+            }]
         }
     ]
 }
