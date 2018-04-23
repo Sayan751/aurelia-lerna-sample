@@ -34,7 +34,7 @@ module.exports = ({ production, server } = {}) => ({
   mode: production ? "production" : "development",
   entry: {
     app: ["aurelia-bootstrapper"],
-    vendor: ["jquery", "popper.js"]
+    // vendor: ["jquery", "popper.js"]
   },
   resolve: {
     extensions: [".ts", ".js"],
@@ -61,6 +61,30 @@ module.exports = ({ production, server } = {}) => ({
     historyApiFallback: true
   },
   devtool: production ? undefined : "cheap-module-eval-source-map",
+  optimization: {
+      minimize: !!production,
+      // mergeDuplicateChunks: true,
+      splitChunks: {
+        chunks: "all",
+        minSize: 30000,
+        minChunks: 1,
+        maxAsyncRequests: 5,
+        maxInitialRequests: 3,
+        automaticNameDelimiter: '~',
+        name: true,
+        cacheGroups: {
+          vendors: {
+              test: /[\\/]node_modules[\\/]/,
+              priority: -10
+          },
+          default: {
+              minChunks: 2,
+              priority: -20,
+              reuseExistingChunk: true
+          }
+        }
+    }
+  },
 
   module: {
     rules: [
@@ -114,6 +138,5 @@ module.exports = ({ production, server } = {}) => ({
       }
     }),
     new CheckerPlugin(),
-    ...(production ? new UglifyJsPlugin({ compress: { warnings: false }, sourceMap: false }) : [])
   ]
 });
