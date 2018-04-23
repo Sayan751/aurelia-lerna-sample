@@ -45,6 +45,7 @@ module.exports = ({ production, server } = {}) => ({
     alias: {
       '@fortawesome/fontawesome-free-solid$': '@fortawesome/fontawesome-free-solid/shakable.es.js',
       '@fortawesome/fontawesome-free-regular$': '@fortawesome/fontawesome-free-regular/shakable.es.js',
+      'services': path.resolve(__dirname, "../services")
     }
   },
   output: {
