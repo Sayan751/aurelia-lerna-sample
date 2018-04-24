@@ -2,6 +2,7 @@
   "name": "aurelia-lerna-sample",
   "version": "1.0.0",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "build": "node ./node_modules/lerna/bin/lerna run build",
     "build:dev": "node ./node_modules/lerna/bin/lerna run build --ignore=main",
@@ -11,7 +12,9 @@
     "start": "npm-run-all --parallel watch run:main",
     "clean": "node ./node_modules/lerna/bin/lerna clean --yes",
     "bootstrap": "node ./node_modules/lerna/bin/lerna bootstrap --hoist --force",
-    "postinstall": "npm run bootstrap",
+    "yarni": "yarn install",
+    "postyarni1": "node ./node_modules/lerna/bin/lerna bootstrap",
+    "postinstall1": "node ./node_modules/lerna/bin/lerna bootstrap",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Sayan Pal",
@@ -35,5 +38,8 @@
     "typescript": "^2.8.1",
     "vinyl-paths": "^2.1.0",
     "whatwg-fetch": "^2.0.4"
-  }
+  },
+  "workspaces": [
+    "modules/*"
+  ]
 }
